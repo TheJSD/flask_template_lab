@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* max-width: 840px; */
+    /* border: 1px solid red; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.navbar {
+    background-color: dodgerblue;
+    padding: 4px;
+
+}
+
+.events_url {
+    color: white;
+    text-decoration: none;
+}
+
+.form {
+    background-color: rgb(23, 120, 217);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 250px;
+    border-left: black 4px solid;
+    border-top: black 4px solid;
+    border-bottom: black 4px solid;
+}
+
+/* .event_label {
+} */
+
+.basebody {
+    display: flex;
+}
+
+.party_section {
+    background-color: lightskyblue;
+    color: white;
+    border-right: rgb(0, 0, 0) 4px solid;
+    border-left: rgb(0, 0, 0) 4px solid;
+    border-bottom: black 4px solid;
+}
+
+.party_title {
+    background-color: dodgerblue;
+    color: white;
+    list-style: none;
+    border-bottom: black 4px solid;
+    border-top: black 4px solid
+}
+
+.party_box {
+    background-color: lightskyblue;
+    color: black;
+    list-style: none;
+}

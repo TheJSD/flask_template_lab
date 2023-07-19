@@ -1,0 +1,49 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<div class="basebody">
+<form class="form" action="/events" method="post">
+    <label class="event_label" for="name">Event name</label>
+    <input type="text" name="name" id="name">
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date">
+    <label for="guests">Number of guests</label>
+    <input type="number" name="guests" id="guests">
+    <label for="room">Select a Room</label>
+    <select name="room" id="room">
+        <option value="" disabled selected>Choose your room</option>
+        <option value="Room 1">Room 1</option>
+        <option value="Room 2">Room 2</option>
+        <option value="Room 3">Room 3</option>
+    </select>
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description">
+    <label for="recurring">Recurring</label>
+    <input type="checkbox" name="recurring" id="recurring">
+    <input type="submit" value="Add Event"/>
+</form>
+
+    <ul class="party_section">
+        {% for event in events %}
+                <li class="party_title">{{ event.name }}</li>
+                <ul class="party_box">
+                    <li>Date: {{ event.date }}</li>
+                    <li>Number of Guests: {{ event.guests }}</li>
+                    <li>{{ event.room_location }}</li>
+                    <li>Description: {{ event.description }}</li>
+                    <li>Event Repeats: {% if event.recurring %}
+                        &#9989      
+                        {% else %}
+                        ❌
+                    {% endif %}</li>
+                </ul>
+                <form action="/events/{{ loop.index0 }}/delete" method="post">
+                <label for="delete_event"></label>
+                <input type="submit" value="Delete Event" name="delete" id="{loop.index0}"/>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
+
